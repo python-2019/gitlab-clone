@@ -45,4 +45,5 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
 if __name__ == '__main__':
     gitlabAddr = 'https://git.sensin-tech.cn'
     gitlabToken = 'yNJQufxun5iCbzmjxmNW'
-    download(gitlabAddr, gitlabToken)
+    ssh_or_http = "http"
+    download(gitlabAddr, gitlabToken, ssh_or_http)
