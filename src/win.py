@@ -20,7 +20,7 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
             break
         for thisProject in allProjectsDict:
             try:
-                if ssh_or_http == "ssh":
+                if ssh_or_http is "http":
                     # http下载
                     thisProjectURL = thisProject['http_url_to_repo']
                     thisProjectPath = thisProject['path_with_namespace']
