@@ -29,7 +29,7 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
                         command = 'git clone %s' % (thisProjectPath)
                     else:
                         command = 'git clone %s %s' % (thisProjectURL, thisProjectPath)
-                    resultCode = os.system(command)
+                    os.system(command)
                 else:
                     # ssh 下载
                     thisProjectURL = thisProject['ssh_url_to_repo']
@@ -39,8 +39,8 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
                         command = 'git -C "%s" pull' % (thisProjectPath)
                     else:
                         command = 'git clone %s %s' % (thisProjectURL, thisProjectPath)
-                    resultCode = os.system(command)
-                time.sleep(1)
+                    os.system(command)
+                # time.sleep(1)
             except Exception as e:
                 print("Error on %s: %s" % (thisProjectURL, e.strerror))
 

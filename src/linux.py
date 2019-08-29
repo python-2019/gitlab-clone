@@ -16,7 +16,7 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
             break
         for thisProject in allProjectsDict:
             try:
-                if ssh_or_http == "ssh"
+                if ssh_or_http == "ssh":
                     # http下载
                     thisProjectURL = thisProject['http_url_to_repo']
                     thisProjectPath = thisProject['path_with_namespace']
@@ -25,7 +25,7 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
                         command = shlex.split('git clone' % (thisProjectURL))
                     else:
                         command = shlex.split('git clone %s %s' % (thisProjectURL, thisProjectPath))
-                    resultCode = os.subprocess.Popen(command)
+                    os.subprocess.Popen(command)
                 else:
                     # ssh 下载
                     thisProjectURL = thisProject['ssh_url_to_repo']
@@ -36,7 +36,7 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
                     else:
                         command = shlex.split('git clone %s %s' % (thisProjectURL, thisProjectPath))
 
-                    resultCode = os.subprocess.Popen(command)
+                    os.subprocess.Popen(command)
                 time.sleep(1)
             except Exception as e:
                 print("Error on %s: %s" % (thisProjectURL, e.strerror))
