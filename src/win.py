@@ -1,13 +1,11 @@
 from urllib.request import urlopen
 import json
-import subprocess, shlex
-import time
 import os
 
 
 def download(gitlabAddr, gitlabToken, ssh_or_http):
     for index in range(10):
-        url = "%s/api/v4/projects?private_token=%s&per_page=100&page=%d&order_by=name" % (
+        url = "%s/api/v3/projects?private_token=%s&per_page=100&page=%d&order_by=name" % (
             gitlabAddr, gitlabToken, index)
         print(url)
         allProjects = urlopen(url)
@@ -46,7 +44,7 @@ def download(gitlabAddr, gitlabToken, ssh_or_http):
 
 
 if __name__ == '__main__':
-    gitlabAddr = 'https://git.sensin-tech.cn'
-    gitlabToken = 'yNJQufxun5iCbzmjxmNW'
+    gitlabAddr = 'XXXX'
+    gitlabToken = 'XXX'
     ssh_or_http = "http"
     download(gitlabAddr, gitlabToken, ssh_or_http)

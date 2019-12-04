@@ -1,5 +1,5 @@
 # gitlab-clone
-gitlab批量下载 python脚本
+gitlab批量下载 python脚本(3.x版本)
 
 # 使用说明
     #gitlab地址

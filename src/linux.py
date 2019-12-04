@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 import json
-import subprocess, shlex
+import shlex
 import time
 import os
 
