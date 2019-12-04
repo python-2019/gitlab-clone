@@ -5,7 +5,7 @@ import os
 
 def download(gitlabAddr, gitlabToken, ssh_or_http):
     for index in range(10):
-        url = "%s/api/v3/projects?private_token=%s&per_page=100&page=%d&order_by=name" % (
+        url = "%s/api/v4/projects?private_token=%s&per_page=100&page=%d&order_by=name" % (
             gitlabAddr, gitlabToken, index)
         print(url)
         allProjects = urlopen(url)
